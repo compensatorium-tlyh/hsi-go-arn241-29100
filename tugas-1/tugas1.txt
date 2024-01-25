@@ -5,5 +5,7 @@ Keduanya sama-sama berkaitan dengan pencetakan string ke konsol. Bedanya adalah 
     1. Beri contoh kode
     2. Salin outputnya
 3. Jelaskan perbedaan fmt.Errorf dan errors.New
+Keduanya sama-sama memberikan pesan error, dan pada umumnya bisa saling menggantikan. Hanya saja, errors.New lebih sederhana karena hanya menampilkan string sederhana. Ada pun fmt.Errorf dapat menampilkan tambahan inline format specifier yang berkaitan dengan suatu nilai tertentu
+
     1. Beri contoh kode
     2. Salin outputnya
