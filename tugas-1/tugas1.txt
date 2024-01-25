@@ -1,0 +1,9 @@
+1. Jelaskan dependency management
+2. Jelaskan beda fmt.Sprintln dengan fmt.Println
+Keduanya sama-sama berkaitan dengan pencetakan string ke konsol. Bedanya adalah fmt.Println langsung mencetaknya ke konsol, sedangkan fmt.Sprintln menyimpan ke dalam variabel terlebih dahulu, sehingga memungkinkan ditambah dengan string lain. Untuk mencetak ke konsol, fmt.Sprintln tetap perlu fungsi fmt.Println (atau fmt.Print)
+    
+    1. Beri contoh kode
+    2. Salin outputnya
+3. Jelaskan perbedaan fmt.Errorf dan errors.New
+    1. Beri contoh kode
+    2. Salin outputnya
