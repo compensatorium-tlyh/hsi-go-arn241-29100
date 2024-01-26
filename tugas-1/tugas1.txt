@@ -1,11 +1,62 @@
+Bismillah
+ARN241-29100 Ihsan Nur Hakim
+
 1. Jelaskan dependency management
+Dependency Management adalah teknik untuk mengelola berbagai package yang digunakan dalam suatu kode Go.
+Kode Go memungkinkan menggunakan pustaka atau package buatan orang lain yang terletak di suatu lokasi.
+Seiring waktu bisa jadi ada kebutuhan untuk mengganti package tersebut.
+Untuk mengatasi hal tersebut dengan baik dan mudah, diperlukan Dependency Management.
+
+Langkah-langkahnya yang perlu ditempuh adalah menambahkan/import package
+dari luar ke kode kita (misal dari pkg.go.dev) dengan statement import.
+Selanjutnya, aktifkan dependency tracking dengan memanggil di konsol "go mod init direktori/nama-package" pada direktori kode kita.
+
+
 2. Jelaskan beda fmt.Sprintln dengan fmt.Println
-Keduanya sama-sama berkaitan dengan pencetakan string ke konsol. Bedanya adalah fmt.Println langsung mencetaknya ke konsol, sedangkan fmt.Sprintln menyimpan ke dalam variabel terlebih dahulu, sehingga memungkinkan ditambah dengan string lain. Untuk mencetak ke konsol, fmt.Sprintln tetap perlu fungsi fmt.Println (atau fmt.Print)
+Keduanya sama-sama berkaitan dengan pencetakan string ke konsol.
+Bedanya adalah "fmt.Println" langsung mencetaknya ke konsol,
+sedangkan fmt.Sprintln menyimpan ke dalam variabel terlebih dahulu,
+sehingga memungkinkan ditambah dengan string lain.
+Untuk mencetak ke konsol, fmt.Sprintln tetap perlu fungsi fmt.Println (atau fmt.Print)
     
-    1. Beri contoh kode
-    2. Salin outputnya
+    1. Beri contoh kode:
+    fmt.Println("Let's Go", "Print")
+	formattedString := fmt.Sprintln("Let us Go", "Sprint")
+	fmt.Print((formattedString))
+
+    2. Salin outputnya:
+    Let's Go Print
+    Let us Go Sprint
+
 3. Jelaskan perbedaan fmt.Errorf dan errors.New
 Keduanya sama-sama memberikan pesan error, dan pada umumnya bisa saling menggantikan. Hanya saja, errors.New lebih sederhana karena hanya menampilkan string sederhana. Ada pun fmt.Errorf dapat menampilkan tambahan inline format specifier yang berkaitan dengan suatu nilai tertentu
 
-    1. Beri contoh kode
-    2. Salin outputnya
+    1. Beri contoh kode:
+    func division(a, b float32) (float32, error) {
+        if b == 0 {
+            return 0, fmt.Errorf("Unable to do divide by zero")
+        }
+        return a / b, nil
+    }
+
+    func logarithm(argument float64) (float64, error) {
+        if argument <= 0 {
+            return 0, fmt.Errorf("Unable to do log with %f", argument)
+        }
+        return math.Log(float64(argument)), nil
+        }
+    
+    func main(){
+        c, _ := division(2, 3)
+        d, er := division(4, 0)
+        fmt.Println(c, d, er)
+
+        var f, g float64
+        f, _ = logarithm(100)
+        g, er = logarithm(-10)
+        fmt.Println(f, g, er)
+    }
+    
+    2. Salin outputnya:
+    0.6666667 0 Unable to do divide by zero
+    4.605170185988092 0 Unable to do log with -10.000000

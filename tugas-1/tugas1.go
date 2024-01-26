@@ -30,7 +30,6 @@ func main() {
 	fmt.Println(c, d, er)
 
 	var f, g float64
-	// var _ error
 	f, _ = logarithm(100)
 	g, er = logarithm(-10)
 	fmt.Println(f, g, er)
