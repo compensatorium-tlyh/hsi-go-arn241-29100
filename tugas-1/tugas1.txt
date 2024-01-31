@@ -34,7 +34,7 @@ Keduanya sama-sama memberikan pesan error, dan pada umumnya bisa saling menggant
     1. Beri contoh kode:
     func division(a, b float32) (float32, error) {
         if b == 0 {
-            return 0, fmt.Errorf("Unable to do divide by zero")
+            return 0, errors.New("Unable to do divide by zero")
         }
         return a / b, nil
     }
