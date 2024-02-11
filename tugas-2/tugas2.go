@@ -9,10 +9,9 @@ import (
 	"time"
 )
 
+// Tugas 1 //////////////////////////
 func generateNik(gender string, tahun int) string {
-
 	var nik string
-	// for i := 0; i < jumlah; {
 	nik = "AR"
 	if gender == "female" {
 		nik += "T"
@@ -50,6 +49,7 @@ func generateNiks(gender string, tahun int, jumlah int) []string {
 	return niks
 }
 
+// Tugas 2 //////////////////////////
 func continueNik(previousNik string, jumlah int) string {
 	if len(previousNik) == 12 {
 		nikSubstring := strings.Split(previousNik, "-")
@@ -63,6 +63,7 @@ func continueNik(previousNik string, jumlah int) string {
 	}
 }
 
+// Tugas 3 //////////////////////////
 func sortNik(niks []string) []string {
 	sortedNik := make([]string, len(niks))
 	copy(sortedNik, niks)
@@ -70,16 +71,18 @@ func sortNik(niks []string) []string {
 	return sortedNik
 }
 
+// / Uji kode tugas
 func main() {
-	fmt.Println("Bismillah")
+	fmt.Println("Tugas 1:")
 	fmt.Println(generateNiks("male", 2025, 5))
 	fmt.Println(generateNiks("female", 2024, 1))
 	fmt.Println(generateNiks("", 2019, 5))
-	fmt.Println()
+	fmt.Println("\nTugas 2:")
 	fmt.Println(continueNik("ART241-00539", 1))
 	fmt.Println(continueNik("ARN191-74518", 1))
 	fmt.Println(continueNik("AR191-74518", 1))
-	fmt.Println()
+	fmt.Println("\nTugas 3:")
+	// NIK telah berhasil digenerate (secara random) dan diurutkan sesuai alfabet. Adapun jika ada 2 gender maka akan terpisah berdasarkan gendernya. Pada realitanya, grup halaqah tidak digabung antara ikhwan dan akhawat
 	fmt.Println(sortNik(generateNiks("", 2024, 5)))
 
 }
